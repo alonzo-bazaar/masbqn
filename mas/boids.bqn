@@ -81,10 +81,17 @@ DispCoord ← {
     ⌊ min⊸× coords
 }
 
-PerFrame ← {
+DrawBoid ← { 𝕊boid:
     dr ← 5
+	x‿y ← DispCoord 2↑boid
+	dx‿dy ← Norm2⊸÷˜ 2↓boid	
+
+    {white r.draw.Circle ⟨(⌊¨𝕩)⋄dr⟩} x‿y
+}
+
+PerFrame ← {
     DrawArena@
-    {white r.draw.Circle ⟨(⌊¨𝕩)⋄dr⟩}˘DispCoord 2⊸↑˘boids
+    DrawBoid˘boids
    			 
 	boids Update↩
     100|𝕩+1
