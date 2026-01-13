@@ -11,6 +11,7 @@ as of writing
 * Currently implemented mas
 - ~template.bqn~ not a mas, just an example from rayed-bqn that I have shoved in the mas directory as an easy means to have a minimal working example for a rayed-bqn program
 - ~rendezvouz.bqn~ a (questionalbe) implementation of a rendezvouz for agents with a single integrator dynamic using an (equally questionalbe implementation of) artificial potential fields.
+- ~boids.bqn~ boids
 
 * To be implemented
-- ~boids.bqn~ I want to make boids
+(nothing here currently)
