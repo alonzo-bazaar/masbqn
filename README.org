@@ -1,0 +1,16 @@
+* MAS
+Due to lack of a better clue on naming for this project I have decided to name it as if it were about multiagent systems, which, in part, it is
+
+It is mostly implmenetations (and visualizations) for various algorithms involving a bunch of separate particles moving about
+
+* Structure of this repo
+as of writing
+- ~rayed-bqn~ is a submodule and go read its docs if you wanna know what it is
+- ~mas~ is the directory where I put my various implementations for things
+
+* Currently implemented mas
+- ~template.bqn~ not a mas, just an example from rayed-bqn that I have shoved in the mas directory as an easy means to have a minimal working example for a rayed-bqn program
+- ~rendezvouz.bqn~ a (questionalbe) implementation of a rendezvouz for agents with a single integrator dynamic using an (equally questionalbe implementation of) artificial potential fields.
+
+* To be implemented
+- ~boids.bqn~ I want to make boids

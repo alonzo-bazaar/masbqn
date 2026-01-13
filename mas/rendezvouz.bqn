@@ -1,4 +1,4 @@
-⟨⟨white, black, red, blue⟩⇐color⟩←r←•Import "../rayed.bqn"
+⟨⟨white, black, red, blue⟩⇐color⟩←r←•Import "../rayed-bqn/rayed.bqn"
 
 # settings for the simulation
 config ← {
