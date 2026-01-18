@@ -116,18 +116,18 @@ Nd ← {(√+˝×˜𝕩)⊸(÷˜)˘ 𝕩}
 DrawBoids ← { 𝕊bs:
     h ← 16 # triangle height
     w ← 8 # triangle width
-	x_y ← DispCoord 2↑bs
-	ndx_dy ← Nd 2↓bs # normalized
+    x_y ← DispCoord 2↑bs
+    ndx_dy ← Nd 2↓bs # normalized
 
-	tips ←  ⌊x_y + h ×  ndx_dy
-	left ← 	⌊x_y + w × ⌽ ¯1⊸×⌾⊏ndx_dy
-	right ← ⌊x_y - w × ⌽ ¯1⊸×⌾⊏ndx_dy
+    tips ←  ⌊x_y + h ×  ndx_dy
+    left ← 	⌊x_y + w × ⌽ ¯1⊸×⌾⊏ndx_dy
+    right ← ⌊x_y - w × ⌽ ¯1⊸×⌾⊏ndx_dy
 
-	{red r.draw.Circle 𝕩‿5}˘ ⍉tips
-	{red  r.draw.Circle 𝕩‿3}˘ ⍉right
-	# {blue   r.draw.Circle 𝕩‿3}˘ ⍉left
+    {red r.draw.Circle 𝕩‿5}˘ ⍉tips
+    {red  r.draw.Circle 𝕩‿3}˘ ⍉right
+    # {blue   r.draw.Circle 𝕩‿3}˘ ⍉left
 
-	{white r.draw.Triangle(3‿2⥊𝕩)}_debug˘ ⍉tips∾right∾left
+    {white r.draw.Triangle(3‿2⥊𝕩)}_debug˘ ⍉tips∾right∾left
 }
 
 PerFrame ← {
