@@ -22,12 +22,12 @@ _debug ← {
 }
 
 # boids
-nboids ← 20 
+nboids ← 200 
 boids ← { x_y ← RandArr 2‿nboids
 	      dx_dy ← 10 ÷˜ 0.5-˜RandArr 2‿nboids
 	      x_y ∾ dx_dy 
 	  	}
-							
+
 # simulation functions and utils
 # Neighbour Indices
 # return array of arrays where every element neigh_i of the result
@@ -94,7 +94,7 @@ Up ← {𝕊 bs:
 ⟨⟨white,
   black,
   red,
-  crimson,
+  green,
   blue⟩ ⇐color⟩←r←•Import "../rayed-bqn/rayed.bqn"
 
 DrawArena ← { 𝕊@:
@@ -123,11 +123,16 @@ DrawBoids ← { 𝕊bs:
     left ← 	⌊x_y + w × ⌽ ¯1⊸×⌾⊏ndx_dy
     right ← ⌊x_y - w × ⌽ ¯1⊸×⌾⊏ndx_dy
 
-    {red r.draw.Circle 𝕩‿5}˘ ⍉tips
-    {red  r.draw.Circle 𝕩‿3}˘ ⍉right
-    # {blue   r.draw.Circle 𝕩‿3}˘ ⍉left
+	f ← 2÷˜ 1+ ÷˜⟜↕ ≠⍉tips # fading
+	Fade ← {255˘⌾(¯1⊸⊏˘) ⌊𝕩⊸×˘f}
+    (Fade red) {𝕨 r.draw.Circle 𝕩‿10}˘ ⍉tips
+    (Fade green) {𝕨 r.draw.Circle 𝕩‿6}˘ ⍉right
+    (Fade blue) {𝕨 r.draw.Circle 𝕩‿6}˘ ⍉left
 
-    {white r.draw.Triangle(3‿2⥊𝕩)}_debug˘ ⍉tips∾right∾left
+    # to be added back once I figure out why do the triangles
+	# occasionally disappear
+
+    # {white r.draw.Triangle(3‿2⥊𝕩)}_debug˘ ⍉tips∾right∾left
 }
 
 PerFrame ← {
