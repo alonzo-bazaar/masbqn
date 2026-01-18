@@ -1,5 +1,6 @@
 # file made only to see a triangle fuck itself up
-# not related to repo, just a bug demonstration
+# not related to repo, just a demonstration of me not knowing
+# how to call r.draw.Triangle
 ⟨⟨white, black, red, green, blue⟩ ⇐color⟩←r←•Import "../rayed-bqn/rayed.bqn"
 
 # translate normalized coordinates (with box x and y ∊ (0, 1))
@@ -32,7 +33,7 @@ DrawBoids ← { 𝕊bs:
     {green  r.draw.Circle 𝕩‿10}˘ ⍉right
     {blue   r.draw.Circle 𝕩‿10}˘ ⍉left
 
-    {white r.draw.Triangle(3‿2⥊𝕩)}˘ ⍉tips∾right∾left
+    {white r.draw.Triangle(3‿2⥊𝕩)}˘ ⍉tips∾left∾right
 }
 
 Boids ← { 𝕊t:
